@@ -1,18 +1,20 @@
-public class Helloapp{
-    public static void main (String[] args){
-        StringBuilder nameBuilder = new StringBuilder();
-        for (int i = 0; i < args.length; i++){
-            nameBuilder.append(args[i]);
-            if (i < args.length - 1){
-                nameBuilder.append(", ");
-            }
+public class HelloWorld {
+    public static void main(String[] args) {
+
+        if (args.length == 0) {
+            System.out.println("Hello, World!");
+            return;
         }
-        if (args.length == 0){
-        System.out.println("Hello, World!");
-        return;
+
+        String names = "";
+
+        for (String name : args) {
+            names += name + ", ";
         }
-        String name = nameBuilder.toString();
-        System.out.println("Hello " + name + "!");
+
+        // Remove last comma and space
+        names = names.substring(0, names.length() - 2);
+
+        System.out.println("Hello, " + names + "!");
     }
 }
-	
